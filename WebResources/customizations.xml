@@ -1,0 +1,14 @@
+<ImportExportXml version="1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <WebResources>
+    <WebResource>
+      <Name>new_alertOnLoad</Name>
+      <DisplayName>Show Alert on Load</DisplayName>
+      <Description>JS to show alert on form load</Description>
+      <FileName>WebResources/alertOnLoad.js</FileName>
+      <LanguageCode>1033</LanguageCode>
+      <IsManaged>0</IsManaged>
+      <WebResourceType>3</WebResourceType>
+    </WebResource>
+  </WebResources>
+</ImportExportXml>
+
