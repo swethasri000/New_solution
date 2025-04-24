@@ -1,0 +1,24 @@
+name: Deploy Solution
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Set up PAC CLI
+        run: |
+          npm install -g pac
+          pac install latest
+
+      - name: Authenticate to Power Platform
+        run: pac auth create --url https://orge6e6734e.crm.dynamics.com --client-id ${{ secrets.CLIENT_ID }} --client-secret ${{ secrets.CLIENT_SECRET }} --tenant ${{ secrets.TENANT_ID }}
+
+      - name: Import solution
+        run: pac solution import --path ./solutions/pcf
